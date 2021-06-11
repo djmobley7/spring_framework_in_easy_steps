@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<bean name="address"
+		class="com.bharath.spring.springcore_advanced.autowiring.Address"
+		p:number="123" p:street="Main" p:city="Raleigh" />
+		
+	<!-- Autowire by type -->
+	<!-- 
+	<bean name="employee"
+		class="com.bharath.spring.springcore_advanced.autowiring.Employee"
+		autowire="byType" />
+	-->
+	
+	<!-- Autowire by name, works by matching the class variable name with the Spring bean name -->	
+	<!-- 
+	<bean name="employee"
+		class="com.bharath.spring.springcore_advanced.autowiring.Employee"
+		autowire="byName" />
+	-->
+	
+	<!-- Autowire by constructor -->
+	<bean name="employee"
+		class="com.bharath.spring.springcore_advanced.autowiring.Employee"
+		autowire="constructor" />
+</beans>
